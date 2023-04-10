@@ -53,7 +53,7 @@ pipeline {
                         sh 'git config --global user.email "lioryasharzada@gmail.com"'
                         sh 'git config --global user.name "jenkins"'
 
-                        sh "git remote set-url origin https://github.com/Lior97/Jenkins.git"
+                        sh "git remote set-url origin git@github.com:Lior97/Jenkins.git"
                         sh 'git add .'
                         sh 'git commit -m "ci: version bump"'
                         sh 'git push '
