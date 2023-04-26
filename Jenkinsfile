@@ -7,7 +7,7 @@ pipeline {
         stage('increment version') {
             steps {
                 script {
-                        dir("app") {
+                        dir("AWS") {
                         npm version minor
                         def packageJson = readJSON file: 'package.json'
                         def version = packageJson.version
@@ -20,7 +20,7 @@ pipeline {
         stage('Run tests') {
             steps {
                script {
-                    dir("app") {
+                    dir("AWS") {
                         sh "npm install"
                         sh "npm run test"
                     } 
