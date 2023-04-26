@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         nodejs "node"
-        git "/usr/bin/git"
+        git "git"
     }
     stages {
         stage('increment version') {
