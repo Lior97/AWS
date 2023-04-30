@@ -8,10 +8,10 @@ pipeline {
         stage('increment version') {
             steps {
                 script {
+                    def version = packageJson.version
                         dir("AWS") {
                         npm version minor
                         def packageJson = readJSON file: 'package.json'
-                        def version = packageJson.version
                         env.IMAGE_NAME = "$version-$BUILD_NUMBER"
                     }
 
